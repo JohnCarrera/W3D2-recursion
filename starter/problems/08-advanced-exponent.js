@@ -40,19 +40,19 @@ times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
 
-function advancedExponent(b, n) {
-  if (n === -1) return b;
-  if (n === 1) return b;
-  if (n === 0) return 1
-  if (n > 0) {
-    if (n % 2 === 0) return advancedExponent(b, n / 2) ** 2
-    else if (n % 2 === 1) return b * advancedExponent(b, (n - 1) / 2) ** 2
+function advancedExponent(num, exp) {
+  if (exp === -1) return num;
+  if (exp === 1) return num;
+  if (exp === 0) return 1
+  if (exp > 0) {
+    if (exp % 2 === 0) return advancedExponent(num, exp / 2) ** 2
+    else if (exp % 2 === 1) return num * advancedExponent(num, (exp - 1) / 2) ** 2
   }
-  if (n < 0) {
-    b = 1 / b
-    if (n === 0) return -1
-    if (n % 2 === 0) return advancedExponent(b, n / 2) ** 2
-    else if (n % 2 === -1) return b * advancedExponent(b, (n + 1) / 2) ** 2
+  if (exp < 0) {
+    num = 1 / num
+    if (exp === 0) return -1
+    if (exp % 2 === 0) return advancedExponent(num, exp / 2) ** 2
+    else if (exp % 2 === -1) return num * advancedExponent(num, (exp + 1) / 2) ** 2
   }
 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
