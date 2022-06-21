@@ -10,8 +10,12 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-// your code here
-  
+const sumArray = nums => {
+	if (!nums.length) return 0
+	const last = nums.pop()
+	const recursiveCall = sumArray(nums)
+	return last + recursiveCall
+  }
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumArray;
