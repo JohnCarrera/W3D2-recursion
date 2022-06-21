@@ -12,11 +12,9 @@ sumToN(-8)  // returns null
 ***********************************************************************/
 
 let sumToN = num => {
-	debugger
 
-	if (num === 0) {
-		return num;
-	}
+	if (num < 0) return null;
+	if (num === 0) return num;
 
 	return num + sumToN(num-1);
 
