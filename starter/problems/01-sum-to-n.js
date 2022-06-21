@@ -12,12 +12,9 @@ sumToN(-8)  // returns null
 ***********************************************************************/
 
 let sumToN = num => {
-
 	if (num < 0) return null;
 	if (num === 0) return num;
-
 	return num + sumToN(num-1);
-
 }
 
 console.log(sumToN(5)) // returns 15
