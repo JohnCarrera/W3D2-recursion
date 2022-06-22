@@ -22,11 +22,10 @@ base case:
 
 ***********************************************************************/
 
-
 const fibonacci = n => {
-	if (n <= 1) return n;
-	return fibonacci(n - 1) + fibonacci(n - 2);
- }
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

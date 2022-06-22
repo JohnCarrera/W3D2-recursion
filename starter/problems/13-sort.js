@@ -19,12 +19,35 @@ Examples:
 sort([4,1,6,3,1,7]); // [1, 1, 3, 4, 6, 7]
 sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
+
+
+
+const isSorted = (arr, i = arr.length - 1)=> {
+  if(i === 0) return true;
+  if(arr[i] > arr[i-1]) return isSorted(arr, --i);
+  return false;
+}
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  if (!nums.length) return sorted
+  if (nums.length === 1) {
+    sorted.push(nums.pop(0))
+    return sorted;
+  }
+  let smallest = nums[0]
+  for (let el of nums) {
+    if (el < smallest) {
+      smallest = el;
+    }
+  }
+  sorted.push(smallest)
+  nums.splice(nums.indexOf(smallest), 1);
+  return sort(nums, sorted)
 }
-
+console.log(sort([4, 1, 6, 3, 1, 7])); // [1, 1, 3, 4, 6, 7]
+console.log(sort([0, 1, -3])); // [-3, 0, 1]
+console.log(sort([])); // []
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sort;
