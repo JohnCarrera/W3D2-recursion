@@ -10,7 +10,11 @@ isSorted([2, 4, 6, 7, 8]); // true
 isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
-// your code here
+const isSorted = (arr, i = arr.length - 1)=> {
+	if(i === 0) return true;
+	if(arr[i] > arr[i-1]) return isSorted(arr, --i);
+	return false;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
